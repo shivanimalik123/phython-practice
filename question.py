@@ -212,4 +212,121 @@
 
 # show()
 # print(x)
+
+
+# try: 
+#     print(10/0)
+# except:
+#     print("error")
+# finally:
+#     print("end")   
+
+
+# try:
+#     x=int("5")
+#     print(x)
+# except:
+#     print("valid no")
+# finally:
+#     print("end")
+
+# try:
+#     num=int(input("enter a no"))
+#     print(num / 0)
+# except:
+#     print("cannot divide")
+# finally:
+#     print("end")
+
+# try:
+#      nums=[10,20,30]
+#      print(nums[0])
+# except:
+#      print("not found")
+# finally:
+#      print("end")     
+
+# try:
+#     num=str(5+"2")
+#     print(num)
+# except:
+#     print("wrong input")
+# finally:
+#     print("finiish")
+
+# try:
+#     print("A")
+#     print(10/0)
+#     print("B")
+# except:
+#     print("Error")
+# finally:
+#     print("Done")
+
+
+# def divide():
+#     try:
+#      print(10/0)
+#     except:
+#      print("error")
+#     finally:
+#      print("done")
+
+# print("Start")
+# divide()
+# print("End")
+
+
+# def a():
+#     try:
+#         print("A")
+#         return
+#     except:
+#         print("B")
+#     finally:
+#         print("C")    
+# print("Start")
+# a()
+# print("End")
+
+
+# function questions
+# def show():
+#     print("A")
+
+# print("Start")
+# show()
+# print("End")
+
+# def test():
+#     for i in range(1,4):
+#         print(i)
+
+# print("X")
+# test()
+# print("Y")
     
+# def fun():
+#     print("A")
+#     return
+#     print("B")
+
+# print("Start")
+# fun()
+# print("End")
+
+# print("1")
+# def so():
+#     print("2")
+    
+# print("3")
+# so()
+# print("4")
+
+# def test():
+#     print("Hello")
+#     return "Hi"
+#     print("c")
+
+# print(test())
+
