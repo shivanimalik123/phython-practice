@@ -330,3 +330,96 @@
 
 # print(test())
 
+
+# a=int(input("enter first no."))
+# b=int(input("enter second no."))
+# sum=a+b
+# print(sum)
+
+# length=int(input("enter length"))
+# breadth=int(input("enter breadth"))
+# area = length * breadth
+# perimeter = 2 * (length + breadth)
+# print("Area",area)
+# print("perimeter",perimeter)
+
+
+# for i in range(1,6):
+#     for j in range(i):
+#         print("*",end=" ")
+#     print()
+
+# num=int(input("enter a number"))
+# if num % 2==0:
+#     print("even no")
+# else:
+#     print("odd no")
+
+
+# n=int(input("enter a no"))
+# square = n * n 
+# print(square)
+
+# for i in range(1,11):
+#     print(i)
+
+# for i in range(10,0,-1):
+#     print(i)
+
+
+# for i in range(1,11):
+#     print("3","x",i,"=",i*3)
+
+
+# num=5
+# if num > 5:
+#     print("greater")
+# elif num < 5:
+#     print("smaller")
+# else:
+#     print("equal")
+
+
+# num=-1
+# if num > 0:
+#     print("positive")
+# elif num < 0:
+#     print("negative")
+# else:
+#     print("zero")
+
+
+# for i in range(1,6):
+#     for j in range(i):
+#         print("+",end=" ")
+#     print()
+
+
+# for i in range(1,6):
+#     for j in range(1,i+1):
+#         print(j,end=" ")
+#     print()
+
+
+# numbers=[10,20,30]
+# print(len(numbers))   
+
+# t=(2,4,5)
+# print(len(t))
+
+# student={
+#     "name":"shivani",
+#     "age": 18,
+#     "marks": 90
+# }
+# print(student)
+
+# s={1,2,3,4}
+# print(s)
+
+# f=open("students.txt","w")
+# f.write("Hello Students")
+# f.close()
+
+f=open("students.txt","w")
+f.close()
