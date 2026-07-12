@@ -421,5 +421,79 @@
 # f.write("Hello Students")
 # f.close()
 
-f=open("students.txt","w")
-f.close()
+# f=open("students.txt","w")
+# f.close()
+
+
+# length=int(input("Enter length"))
+# breadth=int(input("Enter breadth"))
+# Area = length*breadth
+# perimeter = 2 * (length+breadth)
+# print("Area of rectangle",Area)
+# print("Perimeter of rectangle",perimeter)
+
+
+# num=5
+# if num < 0:
+#     print("Positive")
+# elif num > 0:
+#     print("negative")
+# else:
+#     print("Zero")
+
+
+# num=2
+# while num <=50:
+#     print(num)
+#     num +=2
+
+# def is_prime(n):
+
+
+
+
+
+
+
+
+
+
+
+
+# try:
+#     a=float(input("enter a number"))
+#     b=float(input("enter a number"))
+#     result=a/b
+#     print(result)
+# except:
+#     print("No divisible")
+
+
+# for i in range(1,6):
+#     for j in range(i):
+#         print("*",end=" ")
+#     print()
+
+
+# for i in range(1,6):
+#     for j in range(i):
+#         print(i,end=" ")
+#     print()    
+
+
+# for i in range(1,6):
+#     for j in range(1,i+1):
+#         print(j,end=" ")
+#     print()
+
+# f=open("student.txt","w")
+# f.write("shivani\n")
+# f.write("anshu\n")
+# f.write("komal\n")
+# f.close()
+
+# f=open("student.txt","r")
+# print(f.read())
+# f.close()
+
+
