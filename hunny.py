@@ -26,6 +26,72 @@
 # data=[1,2,3,4,5,6,7,8,9,10]
 # print(data[::-2])
 
+# name= "Shivani"
+# print(name)
 
+# age=18
+# print(age)
 
+# a=3
+# b=4
+# sum=a+b
+# print(sum)
 
+# a=3
+# b=5
+# a,b=b,a
+# print("a",a)
+# print("b",b)
+
+# name="shivani"
+# age=18
+# price=4.6
+# old=True
+# print(type(name))
+# print(type(age))
+# print(type(price))
+# print(type(old))
+
+# a="25"
+# b=int(a)
+# print(b)
+
+# a=100
+# b=str(a)
+# print(b)
+# print(type(b))
+
+# height=5.4
+# print(type(height))
+
+# name="hunny"
+# age=20
+# city="america"
+# print(name,age,city)
+
+# Length=int(input("enter length"))
+# Breadth=int(input("enter breadth"))
+# Area= Length * Breadth
+# print("area of rectangle",Area)
+
+# radius=6
+# Area=3.14 * radius * radius
+# print(Area) 
+
+# a=5
+# b=4
+# c=2
+# si=(a*b*c) / 100
+# print(si)
+
+# s=3
+# h=4
+# i=3
+# average=(s+h+i)/3
+# print(average)
+
+num=5
+if num % 3==0:
+    print("even ")
+else:
+    print("odd")
