@@ -447,18 +447,7 @@
 #     print(num)
 #     num +=2
 
-# def is_prime(n):
-
-
-
-
-
-
-
-
-
-
-
+# def is_prime():
 
 # try:
 #     a=float(input("enter a number"))

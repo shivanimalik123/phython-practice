@@ -90,8 +90,60 @@
 # average=(s+h+i)/3
 # print(average)
 
-num=5
-if num % 3==0:
-    print("even ")
-else:
-    print("odd")
+# num=5
+# if num % 3==0:
+#     print("even ")
+# else:
+#     print("odd")
+
+
+# import random
+# print("Welcome to the Random Number Guessing Game ")
+# # Generate a random number between 1 and 100
+# secret_number = random.randint(1, 100)
+
+# attempts = 0
+
+# while True:
+#     guess = int(input("Enter your guess (1-100): "))
+#     attempts += 1
+
+#     difference = abs(secret_number - guess)
+
+#     if guess == secret_number:
+#         print("f\n🎉 Congratulations! You guessed the correct number: {secret_number}")
+#         print("f You guessed it in {attempts} attempts.")
+#         break
+
+#     elif difference <= 5:
+#         print("Very Close! Just a few numbers away.")
+
+#     elif difference <= 10:
+#         print("Close! Keep trying.")
+
+#     elif guess < secret_number:
+#         print("Too Low!")
+
+#     else:
+#         print("Too High!")
+
+# board = [" "] * 9
+
+# for i in range(9):
+    
+#     print(board[0],  "|"  ,board[1],  "|", board[2])
+#     print(board[3],  "|"  ,board[4],  "|", board[5])
+#     print(board[6],  "|"  ,board[7],  "|", board[8])
+
+#     p = int(input("Enter Position: "))
+
+#     if board[p] != " ":
+#         print("Position already filled")
+#         continue
+
+#     if i % 2==0:
+#         board[p] = "X"
+#     else:
+#         board[p] = "o"
+
+# print("Game OVER")       
