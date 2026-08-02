@@ -15,7 +15,7 @@
 
 # import numpy as np
 # a = np.array([1,2,3,4])
-# print(a.dtype)
+# print(type(a))
 
 # import numpy as np
 # arr = np.array([10,20,30,40,50])
@@ -60,6 +60,9 @@
 # arr = np.array([1,2,3,4,3,5])
 # print(arr.size)
 
-import numpy as np 
-a=([[1,2,3,4],[2,3,4,5]])
-print(a)
+
+# import numpy as np 
+# a=([[1,2,3,4],[2,3,4,5]])
+# print(a)
+
+
