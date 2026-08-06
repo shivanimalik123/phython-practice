@@ -47,7 +47,8 @@
 # series.loc["C"]=35
 # print(series)
 
-import pandas as pd
-data =[5,10,15,20]
-series = pd.Series(data)
-print(series[series>=20])
+# import pandas as pd
+# data =[5,10,15,20]
+# series = pd.Series(data)
+# print(series[series>=20]) 
+
