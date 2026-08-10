@@ -88,13 +88,13 @@
 # plt.show()
 
 # 11.PLOT CUSTOMIZATION
-import matplotlib.pyplot as plt
-x = [1,2,3,4,5]
-y = [2,4,6,8,10]
-plt.plot(x,y,color="green",marker="o",linestyle="--",label="Line 1")
-plt.title("Customized Line Plot")
-plt.xlabel("X Axis")
-plt.ylabel("Y Axis")
-plt.grid(True)
-plt.legend()
-plt.show()
+# import matplotlib.pyplot as plt
+# x = [1,2,3,4,5]
+# y = [2,4,6,8,10]
+# plt.plot(x,y,color="green",marker="o",linestyle="--",label="Line 1")
+# plt.title("Customized Line Plot")
+# plt.xlabel("X Axis")
+# plt.ylabel("Y Axis")
+# plt.grid(True)
+# plt.legend()
+# plt.show()

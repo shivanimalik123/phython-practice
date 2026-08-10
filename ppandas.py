@@ -52,3 +52,58 @@
 # series = pd.Series(data)
 # print(series[series>=20]) 
 
+# import pandas as pd
+# data = {
+#     "Name":["Shivani","Anshu","Rittu"],
+#     "Marks":[85,90,75]
+# }
+# df = pd.DataFrame(data)
+# print(df)
+
+# import pandas as pd
+# data = {
+#     "Name":["Shivani","Anshu","Rittu"],
+#     "Marks":[85,90,75]
+# }
+# df = pd.DataFrame(data)
+# print(df.head(2))
+
+
+# import pandas as pd
+# data = {
+#     "Name":["Shivani","Anshu","Rittu"],
+#     "Marks":[85,90,75]
+# }
+# df = pd.DataFrame(data)
+# print(df.tail(1))
+
+import pandas as pd
+data = {
+    "Name":["Shivani","Anshu","Rittu"],
+    "Marks":[85,90,75]
+}
+df = pd.DataFrame(data)
+# print(df.shape)
+
+# print(df.columns)
+
+# print(df.dtypes)
+
+# df.info()
+
+# print(df.describe())
+
+# print(df["Name"])
+
+# print(df[["Name","Marks"]])
+
+# print(df.loc[1])
+
+# print(df.iloc[2])
+
+# print(df[df["Marks"]>80])
+
+# print(df.sort_values("Marks"))
+
+df["Grade"]=["A","A+","B"]
+print(df)
