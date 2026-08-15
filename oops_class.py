@@ -128,14 +128,90 @@
 # print(m1.brand,m1.model,m1.storage)
 # print(m2.brand,m2.model,m2.storage)
 
-class Rectangle:
-    def __init__(self,length,width):
-        self.length=length
-        self.width=width
-    def area(self):
-        return self.length * self.width
-    def perimeter(self):
-        return 2*(self.length + self.width)
-r1=Rectangle(10,5)
-print("Area:",r1.area())
-print("Perimeter:",r1.perimeter())
+# class Rectangle:
+#     def __init__(self,length,width):
+#         self.length=length
+#         self.width=width
+#     def area(self):
+#         return self.length * self.width
+#     def perimeter(self):
+#         return 2*(self.length + self.width)
+# r1=Rectangle(10,5)
+# print("Area:",r1.area())
+# print("Perimeter:",r1.perimeter())
+
+# class Student:
+#     def __init__(self,name,roll_number,marks):
+#         self.name=name
+#         self.roll_number=roll_number
+#         self.marks=marks
+#     def display_result(self):
+#         print("Name:",self.name)
+#         print("Roll_Number:",self.roll_number)
+#         print("Marks:",self.marks)
+# s1=Student("Shivani",10,95)
+# s1.display_result()
+
+# class Product:
+#     def __init__(self,name,price,quantity):
+#         self.name=name
+#         self.price=price
+#         self.quantity=quantity
+#     def calculate_total(self):
+#         return self.price * self.quantity
+# p1=Product("Laptop",50000,1)
+# print("Product:",p1.name)
+# print("Price:",p1.price)
+# print("Quantity:",p1.quantity)
+# print("Total:",p1.calculate_total())  
+
+# class Movie:
+#     def __init__(self,name,director,rating,year):
+#         self.name=name
+#         self.director=director
+#         self.rating=rating
+#         self.year=year
+#     def display(self):
+#         print("Movie:",self.name)
+#         print("Director:",self.director)
+#         print("Rating:",self.rating)
+#         print("Year:",self.year)
+#         print()
+# m1=Movie("3 Idiots","Rajlumar Hirani",8.4,2009)
+# m2=Movie("Dangal","Nitesh Tiwari",8.3,2016)
+# m3=Movie("Yevadu","RamChran",9.1,2019)
+# m1.display()
+# m2.display()
+# m3.display()
+
+# class Student:
+#     def __init__(self,name,age):
+#         self.name=name
+#         self.age=age
+# s1=Student("Shivani",18)
+# print("Name:",s1.name)
+# print("Age:",s1.age)
+
+
+# class Student:
+#     def __init__(self,name,age):
+#         self.name=name
+#         self.age=age
+#     def display(self):
+#         print("Name:",self.name)
+#         print("Age",self.age)
+# s1=Student("Anu",20)
+# s1.display()
+
+class Car:
+    def __init__(self,brand,model):
+        self.brand=brand
+        self.model=model
+    def display(self):
+        print("Brand:",self.brand)
+        print("Model:",self.model)
+        print()
+c1=Car("Defender","D4")
+c2=Car("Creta","C4")
+c1.display()
+c2.display()
