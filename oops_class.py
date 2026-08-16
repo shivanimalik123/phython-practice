@@ -203,15 +203,122 @@
 # s1=Student("Anu",20)
 # s1.display()
 
-class Car:
-    def __init__(self,brand,model):
-        self.brand=brand
-        self.model=model
+# class Car:
+#     def __init__(self,brand,model):
+#         self.brand=brand
+#         self.model=model
+#     def display(self):
+#         print("Brand:",self.brand)
+#         print("Model:",self.model)
+#         print()
+# c1=Car("Defender","D4")
+# c2=Car("Creta","C4")
+# c1.display()
+# c2.display()
+
+# class Rectangle:
+#     def __init__(self,length,width):
+#         self.length=length
+#         self.width=width
+#     def area(self):
+#         return self.length * self.width
+# r1=Rectangle(10,2)
+# print("Area:",r1.area())
+
+# class Animal:
+#     def sound(self):
+#         print("Animal makes a sound")
+# class Dog(Animal):
+#     def sound(self):
+#         print("Bark")
+# dog=Dog()
+# dog.sound()
+
+# class Person:
+#     def __init__(self,name,age):
+#         self.name=name
+#         self.age=age
+#     def display(self):
+#         print("Name:",self.name)
+#         print("Age:",self.age)
+#         print()
+# p1=Person("Suman",35)
+# p2=Person("Satish",43)
+# p1.display()
+# p2.display()
+
+# class BankAccount:
+#     def __init__(self,account_holder,balance):
+#         self.account_holder=account_holder
+#         self.balance=balance
+#     def deposit(self,amount):
+#         self.balance += amount
+#         print("Deposited:",amount)
+#     def withdraw(self,amount):
+#         if amount <= self.balance:
+#             self.balance -= amount
+#             print("Withdrawn:",amount)
+#         else:
+#             print("Insufficient balance")
+#     def display(self):
+#         print("Account Holder:",self.account_holder)
+#         print("Balance:",self.balance)
+# account=BankAccount("Shivani",10000)
+# account.deposit(5000)
+# account.withdraw(3000)
+# account.display()
+
+# class Employee:
+#     def __init__(self,name,salary):
+#         self.name=name
+#         self.salary=salary
+# class Manager(Employee):
+#     def __init__(self,name,salary,department):
+#         super().__init__(name,salary)
+#         self.department=department
+#     def display(self):
+#         print("Name:",self.name)
+#         print("Salary:",self.salary)
+#         print("Department:",self.department)
+# m1=Manager("Rishi",290000,"IT")
+# m1.display()
+
+# class Vehicle:
+#     def start(self):
+#         print("Vehicle is starting")
+# class Car(Vehicle):
+#     def start(self):
+#         print("Car starts with a key")
+# class Bike(Vehicle):
+#     def start(self):
+#         print("Bike start with a button")
+# car=Car()
+# bike=Bike()
+# car.start()
+# bike.start()
+
+class Student:
+    def __init__(self,name,marks):
+        self.name=name
+        self.marks=marks
+    def calculate_grade(self):
+        if self.marks >= 90:
+            return "A"
+        elif self.marks >=75:
+            return"B"
+        elif self.marks >=60:
+            return"C"
+        elif self.marks>=40:
+            return"D"
+        else:
+            return"F"
     def display(self):
-        print("Brand:",self.brand)
-        print("Model:",self.model)
-        print()
-c1=Car("Defender","D4")
-c2=Car("Creta","C4")
-c1.display()
-c2.display()
+        print(self.name,"Grade:",self.calculate_grade())
+s1=Student("Shivani",97)
+s2=Student("Komal",78)
+s3=Student("Vinay",85) 
+s1.display()
+s2.display()
+s3.display()       
+
+        
