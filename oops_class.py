@@ -297,28 +297,202 @@
 # car.start()
 # bike.start()
 
-class Student:
-    def __init__(self,name,marks):
-        self.name=name
-        self.marks=marks
-    def calculate_grade(self):
-        if self.marks >= 90:
-            return "A"
-        elif self.marks >=75:
-            return"B"
-        elif self.marks >=60:
-            return"C"
-        elif self.marks>=40:
-            return"D"
-        else:
-            return"F"
-    def display(self):
-        print(self.name,"Grade:",self.calculate_grade())
-s1=Student("Shivani",97)
-s2=Student("Komal",78)
-s3=Student("Vinay",85) 
-s1.display()
-s2.display()
-s3.display()       
+# class Student:
+#     def __init__(self,name,marks):
+#         self.name=name
+#         self.marks=marks
+#     def calculate_grade(self):
+#         if self.marks >= 90:
+#             return "A"
+#         elif self.marks >=75:
+#             return"B"
+#         elif self.marks >=60:
+#             return"C"
+#         elif self.marks>=40:
+#             return"D"
+#         else:
+#             return"F"
+#     def display(self):
+#         print(self.name,"Grade:",self.calculate_grade())
+# s1=Student("Shivani",97)
+# s2=Student("Komal",78)
+# s3=Student("Vinay",85) 
+# s1.display()
+# s2.display()
+# s3.display()
 
-        
+# class Shape:
+#     def area(self):
+#         pass
+# class Circle(Shape):
+#     def __init__(self,radius):
+#         self.radius=radius
+#     def area(self):
+#         return 3.14 * self.radius * self.radius
+# class Rectangle(Shape):
+#     def __init__(self,length,width):
+#         self.length=length
+#         self.width=width
+#     def area(self):
+#             return self.length * self.width
+# shapes=[
+# Circle(5),
+# Rectangle(6,7)
+# ]
+# for shape in shapes:
+#     print("Area:",shape.area())
+
+# class Product:
+#     def __init__(self,name,price,quantity):
+#         self.name=name
+#         self.price=price
+#         self.quantity=quantity
+#     def total_price(self):
+#         return self.price * self.quantity
+    
+# p1=Product("Laptop",50000,2)
+# p2=Product("Mobile",40000,3)
+# print(p1.name,p1.total_price())
+# print(p2.name,p2.total_price())
+
+class Animal:
+    def __init__(self,name):
+        self.name=name
+    def sound(self):
+        pass
+class Dog(Animal):
+    def sound(self):
+        print(self.name,"says Bark")
+class Cat(Animal):
+    def sound(self):
+        print(self.name,"says meow")
+animals=[
+    Dog("Tommy"),
+    Cat("Kitty")
+]
+for animal in animals:
+    animal.sound()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# class Employee:
+#     def __init__(self,name):
+#         self.name=name
+#     def work(self):
+#         print("Employee is working")
+# class Developer(Employee):
+#     def work(self):
+#         print(self.name,"is writing code")
+# class Designer(Employee):
+#     def work(self):
+#         print(self.name,"is designing UI")
+# class Manager(Employee):
+#     def work(self):
+#         print(self.name,"is managing the team")
+# employees=[
+#     Developer("Rahul"),
+#     Designer("Shiv"),
+#     Manager("Ansh")
+# ]
+# for employee in employees:
+#     employee.work()
+
