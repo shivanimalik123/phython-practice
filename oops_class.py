@@ -355,25 +355,105 @@
 # print(p1.name,p1.total_price())
 # print(p2.name,p2.total_price())
 
-class Animal:
-    def __init__(self,name):
-        self.name=name
-    def sound(self):
-        pass
-class Dog(Animal):
-    def sound(self):
-        print(self.name,"says Bark")
-class Cat(Animal):
-    def sound(self):
-        print(self.name,"says meow")
-animals=[
-    Dog("Tommy"),
-    Cat("Kitty")
-]
-for animal in animals:
-    animal.sound()
+# class Animal:
+#     def __init__(self,name):
+#         self.name=name
+#     def sound(self):
+#         pass
+# class Dog(Animal):
+#     def sound(self):
+#         print(self.name,"says Bark")
+# class Cat(Animal):
+#     def sound(self):
+#         print(self.name,"says meow")
+# animals=[
+#     Dog("Tommy"),
+#     Cat("Kitty")
+# ]
+# for animal in animals:
+#     animal.sound()
 
 
+# class Employee:
+#     def __init__(self,name,salary):
+#         self.name=name
+#         self.salary=salary
+# class Developer(Employee):
+#     def __init__(self,name,salary,programming_language):
+#         super().__init__(name,salary) 
+#         self.programming_language=programming_language
+#     def display(self):
+#         print("Name:",self.name)
+#         print("Salary:",self.salary)
+#         print("Programming_language:",self.programming_language)
+# d1=Developer("Shivani",100000,"Python")
+# d2=Developer("Neha",50000,"Json")
+# d1.display()
+# d2.display()
+
+
+# class Person:
+    # def introduce(self):
+#         print("I am a person")
+# class Student(Person):
+#     def introduce(self):
+#         print("I am a student")
+# class Teacher(Person):
+#     def introduce(self):
+#         print("I am a teacher")
+# student = Student()
+# teacher = Teacher()
+# student.introduce()
+# teacher.introduce()
+
+# class Book:
+#     def __init__(self,title,author,price):
+#         self.title=title
+#         self.author=author
+#         self.price=price
+#     def display(self):
+#         print("Title:",self.title)
+#         print("Author:",self.author)
+#         print("Price:",self.price)
+# class EBook(Book):
+#     def __init__(self,title,author,price,file_size):
+#         super().__init__(title,author,price)
+#         self.file_size=file_size
+#     def display(self):
+#         print("Title:",self.title)
+#         print("Author:",self.author)
+#         print("Price:",self.price)
+#         print("File_size:",self.file_size)
+# book=EBook("Python Basics","John",500,10)
+# book.display()
+
+# 1.POLYMORPHISM
+# class Animal:
+#     def sound(self):
+#         print("Animal makes sound")
+# class Dog(Animal):
+#     def sound(self):
+#         print("Dog Bark")
+# class Cat(Animal):
+#     def sound(self):
+#         print("Cat Meow")
+# dog=Dog()
+# cat=Cat()
+# dog.sound()
+# cat.sound()
+
+class Car:
+    def start(self):
+        print("Car start with a key")
+class Bike(Car):
+    def start(self):
+        print(" Bike start with a Button")
+def start_vehicle(vehicle):
+    vehicle.start()
+car=Car()
+bike=Bike()
+start_vehicle(car)
+start_vehicle(bike)
 
 
 
