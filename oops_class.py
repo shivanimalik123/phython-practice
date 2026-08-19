@@ -442,22 +442,69 @@
 # dog.sound()
 # cat.sound()
 
-class Car:
-    def start(self):
-        print("Car start with a key")
-class Bike(Car):
-    def start(self):
-        print(" Bike start with a Button")
-def start_vehicle(vehicle):
-    vehicle.start()
-car=Car()
-bike=Bike()
-start_vehicle(car)
-start_vehicle(bike)
+# 2.
+# class Car:
+    # def start(self):
+#         print("Car start with a key")
+# class Bike(Car):
+#     def start(self):
+#         print(" Bike start with a Button")
+# def start_vehicle(vehicle):
+#     vehicle.start()
+# car=Car()
+# bike=Bike()
+# start_vehicle(car)
+# start_vehicle(bike)
+
+# 3.
+# class Rectangle:
+#     def __init__(self,length,width):
+#         self.length=length
+#         self.width=width
+#     def area(self):
+#         return self.length * self.width
+# class Circle(Rectangle):
+#     def __init__(self,radius):
+#         self.radius=radius
+#     def area (self):
+#         return 3.14 * self.radius * self.radius
+# r=Rectangle(50,2)
+# c=Circle(5)
+# print(r.area())
+# print(c.area())
+
+# # 4.
+# class Employee:
+#     def calculate_salary(self):
+#         print("Calculating salary")
+# class FullTimeEmployee(Employee):
+#     def calculate_salary(self):
+#         print("Salary = 50,000")
+# class PartTimeEmployee(Employee):
+#     def calculate_salary(self):
+#         print("Salary = 25,000")
+# employees=[FullTimeEmployee(),PartTimeEmployee()]
+# for employee in employees:
+#     employee.calculate_salary()
 
 
+# 5.
+# class PDF:
+#     def open_file(self):
+#         print("Opening PDF File")
+# class Word(PDF):
+#     def open_file(self):
+#         print("Writing simple word")
+# class Excel:
+#     def open_file(self):
+#         print("Opening excel spreadsheet")
+# files=[PDF(),Word(),Excel()]
+# for file in files:
+#     file.open_file()
 
-
+# 6.
+class Student:
+    
 
 
 
