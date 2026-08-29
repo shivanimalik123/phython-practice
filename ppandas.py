@@ -148,11 +148,11 @@ df = pd.DataFrame([
 # df = df.drop("City",axis=1)
 # print(df)
 
-df = pd.DataFrame([
-    ["Aman",None],
-    ["Shivani",81],
-    ["Ritesh",80],
-    ["Anshu",None],
-    ["Vinay",60],
-], columns=["Name","Marks"])
-print(df)
+# df = pd.DataFrame([
+#     ["Aman",None],
+#     ["Shivani",81],
+#     ["Ritesh",80],
+#     ["Anshu",None],
+#     ["Vinay",60],
+# ], columns=["Name","Marks"])
+# print(df)

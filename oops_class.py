@@ -502,8 +502,28 @@
 # for file in files:
 #     file.open_file()
 
-# 6.
-class Student:
+
+# class Employee:
+#     def __init__(self,name):
+#         self.name=name
+#     def work(self):
+#         print("Employee is working")
+# class Developer(Employee):
+#     def work(self):
+#         print(self.name,"is writing code")
+# class Designer(Employee):
+#     def work(self):
+#         print(self.name,"is designing UI")
+# class Manager(Employee):
+#     def work(self):
+#         print(self.name,"is managing the team")
+# employees=[
+#     Developer("Rahul"),
+#     Designer("Shiv"),
+#     Manager("Ansh")
+# ]
+# for employee in employees:
+#     employee.work()
     
 
 
@@ -601,25 +621,4 @@ class Student:
 
 
 
-# class Employee:
-#     def __init__(self,name):
-#         self.name=name
-#     def work(self):
-#         print("Employee is working")
-# class Developer(Employee):
-#     def work(self):
-#         print(self.name,"is writing code")
-# class Designer(Employee):
-#     def work(self):
-#         print(self.name,"is designing UI")
-# class Manager(Employee):
-#     def work(self):
-#         print(self.name,"is managing the team")
-# employees=[
-#     Developer("Rahul"),
-#     Designer("Shiv"),
-#     Manager("Ansh")
-# ]
-# for employee in employees:
-#     employee.work()
 

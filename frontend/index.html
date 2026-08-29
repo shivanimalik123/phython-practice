@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Voice Assistant — Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===== APP BAR ===== -->
+    <header class="app-bar">
+        <div class="app-brand">
+            <span class="logo">🎙️</span>
+            <div class="brand-text">
+                <span class="app-title">AI VOICE ASSISTANT</span>
+                <span class="app-subtitle">Proactive Voice-Controlled Desktop Assistant</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== MAIN WRAPPER ===== -->
+    <div class="app-wrapper">
+
+        <!-- ===== LEFT SIDEBAR ===== -->
+        <nav class="sidebar">
+            <div class="sidebar-top">
+                <div class="sidebar-logo">🎙️</div>
+                <div class="sidebar-name">ASSISTANT</div>
+            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-item active" data-view="dashboard">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Dashboard</span>
+                    <div class="nav-indicator"></div>
+                </li>
+                <li class="nav-item" data-view="voice">
+                    <span class="nav-icon">🎤</span>
+                    <span class="nav-text">Voice Control</span>
+                    <div class="nav-indicator"></div>
+                </li>
+                <li class="nav-item" data-view="history">
+                    <span class="nav-icon">📜</span>
+                    <span class="nav-text">Command History</span>
+                    <div class="nav-indicator"></div>
+                </li>
+                <li class="nav-item" data-view="notes">
+                    <span class="nav-icon">📓</span>
+                    <span class="nav-text">Notes</span>
+                    <div class="nav-indicator"></div>
+                </li>
+                <li class="nav-item" data-view="settings">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-text">Settings</span>
+                    <div class="nav-indicator"></div>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <div class="version">v2.0</div>
+            </div>
+        </nav>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="main-content">
+
+            <!-- ---------- DASHBOARD VIEW ---------- -->
+            <section class="view active" id="dashboard-view">
+
+                <!-- Status Section -->
+                <div class="status-section">
+                    <div class="status-indicator">
+                        <div class="status-glow" id="statusGlow"></div>
+                        <div class="status-dot" id="statusDot"></div>
+                        <span class="status-text" id="statusText">READY</span>
+                    </div>
+                    <div class="status-info">
+                        <span class="status-label">SYSTEM STATUS</span>
+                        <span class="status-value online">ONLINE</span>
+                    </div>
+                </div>
+
+                <!-- Central Microphone -->
+                <div class="mic-section">
+                    <div class="mic-glow-ring" id="micGlowRing"></div>
+                    <button class="mic-button" id="micButton">
+                        <span class="mic-icon">🎙️</span>
+                    </button>
+                    <div class="mic-label" id="micLabel">Tap to Speak</div>
+                    <div class="mic-hint">Speak clearly into the microphone</div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-value" id="totalCommands">0</div>
+                        <div class="stat-label">Total Commands</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⚙️</div>
+                        <div class="stat-value" id="systemStatus">Online</div>
+                        <div class="stat-label">System Status</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎙️</div>
+                        <div class="stat-value" id="voiceMode">Active</div>
+                        <div class="stat-label">Voice Mode</div>
+                    </div>
+                </div>
+
+                <!-- Interaction Cards -->
+                <div class="interaction-section">
+                    <div class="interaction-card">
+                        <div class="card-header">
+                            <span class="card-icon">🗣️</span>
+                            <span>You Said</span>
+                        </div>
+                        <div class="card-content" id="youSaid">—</div>
+                    </div>
+                    <div class="interaction-card">
+                        <div class="card-header">
+                            <span class="card-icon">🤖</span>
+                            <span>Assistant Response</span>
+                        </div>
+                        <div class="card-content" id="assistantResponse">Listening for your command...</div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <div class="section-title">
+                        <span class="section-icon">⚡</span>
+                        <span>Quick Actions</span>
+                    </div>
+                    <div class="actions-grid">
+                        <button class="action-btn" data-action="time">
+                            <span class="action-icon">⏰</span>
+                            <span class="action-text">Ask Time</span>
+                        </button>
+                        <button class="action-btn" data-action="date">
+                            <span class="action-icon">📅</span>
+                            <span class="action-text">Ask Date</span>
+                        </button>
+                        <button class="action-btn" data-action="calculator">
+                            <span class="action-icon">🔢</span>
+                            <span class="action-text">Calculator</span>
+                        </button>
+                        <button class="action-btn" data-action="youtube">
+                            <span class="action-icon">📺</span>
+                            <span class="action-text">YouTube</span>
+                        </button>
+                        <button class="action-btn" data-action="notepad">
+                            <span class="action-icon">📝</span>
+                            <span class="action-text">Notepad</span>
+                        </button>
+                        <button class="action-btn" data-action="google">
+                            <span class="action-icon">🔍</span>
+                            <span class="action-text">Google Search</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Bottom Panels: History + Notes -->
+                <div class="bottom-panels">
+                    <div class="panel">
+                        <div class="panel-header">
+                            <span class="panel-icon">📜</span>
+                            <span>Command History</span>
+                        </div>
+                        <div class="panel-content history-list" id="historyList">
+                            <div class="empty-state">No commands yet</div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-header">
+                            <span class="panel-icon">📓</span>
+                            <span>Notes</span>
+                        </div>
+                        <div class="panel-content notes-list" id="notesList">
+                            <div class="empty-state">No notes yet</div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- ---------- VOICE CONTROL VIEW ---------- -->
+            <section class="view" id="voice-view">
+                <div class="voice-control-section">
+                    <div class="section-title">
+                        <span class="section-icon">🎤</span>
+                        <span>Voice Control Center</span>
+                    </div>
+
+                    <div class="voice-instructions">
+                        <div class="instruction-card">
+                            <div class="instruction-icon">🕐</div>
+                            <div class="instruction-text">
+                                <div class="instruction-title">Ask Time</div>
+                                <div class="instruction-desc">"What is the time?" — Ask for current time</div>
+                            </div>
+                        </div>
+                        <div class="instruction-card">
+                            <div class="instruction-icon">📅</div>
+                            <div class="instruction-text">
+                                <div class="instruction-title">Ask Date</div>
+                                <div class="instruction-desc">"What is today's date?" — Ask for today's date</div>
+                            </div>
+                        </div>
+                        <div class="instruction-card">
+                            <div class="instruction-icon">🔢</div>
+                            <div class="instruction-text">
+                                <div class="instruction-title">Calculator</div>
+                                <div class="instruction-desc">"Open calculator" — Launch calculator</div>
+                            </div>
+                        </div>
+                        <div class="instruction-card">
+                            <div class="instruction-icon">📺</div>
+                            <div class="instruction-text">
+                                <div class="instruction-title">YouTube</div>
+                                <div class="instruction-desc">"Open YouTube" — Open YouTube in browser</div>
+                            </div>
+                        </div>
+                        <div class="instruction-card">
+                            <div class="instruction-icon">📝</div>
+                            <div class="instruction-text">
+                                <div class="instruction-title">Notepad</div>
+                                <div class="instruction-desc">"Open notepad" — Launch Notepad</div>
+                            </div>
+                        </div>
+                        <div class="instruction-card">
+                            <div class="instruction-icon">🔍</div>
+                            <div class="instruction-text">
+                                <div class="instruction-title">Google Search</div>
+                                <div class="instruction-desc">"Search Google [query]" — Search the web</div>
+                            </div>
+                        </div>
+                        <div class="instruction-card">
+                            <div class="instruction-icon">📓</div>
+                            <div class="instruction-text">
+                                <div class="instruction-title">Take a Note</div>
+                                <div class="instruction-desc">"Take a note [text]" — Save a note</div>
+                            </div>
+                        </div>
+                        <div class="instruction-card">
+                            <div class="instruction-icon">🚪</div>
+                            <div class="instruction-text">
+                                <div class="instruction-title">Exit</div>
+                                <div class="instruction-desc">"Exit" — Close the assistant</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ---------- COMMAND HISTORY VIEW ---------- -->
+            <section class="view" id="history-view">
+                <div class="history-section">
+                    <div class="section-title">
+                        <span class="section-icon">📜</span>
+                        <span>Command History</span>
+                    </div>
+                    <div class="history-full" id="historyFullList">
+                        <div class="empty-state">No commands in history</div>
+                    </div>
+                    <button class="clear-btn" id="clearHistoryBtn">Clear History</button>
+                </div>
+            </section>
+
+            <!-- ---------- NOTES VIEW ---------- -->
+            <section class="view" id="notes-view">
+                <div class="notes-section">
+                    <div class="section-title">
+                        <span class="section-icon">📓</span>
+                        <span>Notes</span>
+                    </div>
+
+                    <div class="note-input-area">
+                        <textarea class="note-input" id="noteInput" placeholder="Write a new note..."></textarea>
+                        <button class="add-note-btn" id="addNoteBtn">
+                            <span class="btn-icon">💾</span>
+                            <span>Save Note</span>
+                        </button>
+                    </div>
+
+                    <div class="notes-full-list" id="notesFullList">
+                        <div class="empty-state">No notes yet</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ---------- SETTINGS VIEW ---------- -->
+            <section class="view" id="settings-view">
+                <div class="settings-section">
+                    <div class="section-title">
+                        <span class="section-icon">⚙️</span>
+                        <span>Settings</span>
+                    </div>
+
+                    <div class="settings-grid">
+                        <div class="setting-item">
+                            <label>Speech Recognition Engine</label>
+                            <select>
+                                <option>Google Speech API (Online)</option>
+                                <option>CMU Sphinx (Offline)</option>
+                            </select>
+                        </div>
+                        <div class="setting-item">
+                            <label>Speech Rate</label>
+                            <div class="slider-container">
+                                <input type="range" min="100" max="300" value="160">
+                                <span class="slider-value">160</span>
+                            </div>
+                        </div>
+                        <div class="setting-item">
+                            <label>Volume</label>
+                            <div class="slider-container">
+                                <input type="range" min="0" max="100" value="100">
+                                <span class="slider-value">100%</span>
+                            </div>
+                        </div>
+                        <div class="setting-item checkbox-item">
+                            <label>Auto-listen Mode</label>
+                            <input type="checkbox" checked>
+                        </div>
+                        <div class="setting-item checkbox-item">
+                            <label>Dark Theme</label>
+                            <input type="checkbox" checked>
+                        </div>
+                        <div class="setting-item checkbox-item">
+                            <label>Enable Sound Effects</label>
+                            <input type="checkbox" checked>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-left">
+            <span class="footer-icon">🎙️</span>
+            <span>Smart Voice Assistant v2.0 | Created with Python &amp; JavaScript</span>
+        </div>
+        <div class="footer-right">
+            <div class="footer-date" id="footerDate">--</div>
+            <div class="footer-dot" id="footerDot"></div>
+            <span>System Ready</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
