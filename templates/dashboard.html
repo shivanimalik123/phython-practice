@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Smart Student Performance Analysis System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="dashboard">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-top">
+            <div class="logo-small">
+                <svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h4v6h6v-8h3z"/></svg>
+            </div>
+        </div>
+        <nav class="nav" id="nav">
+            <a href="#section-dashboard" class="nav-item active" data-section="dashboard">
+                <span class="nav-icon">🏠</span> Dashboard
+            </a>
+            <a href="#section-student-analysis" class="nav-item" data-section="student-analysis">
+                <span class="nav-icon">👤</span> Student Analysis
+            </a>
+            <a href="#section-performance" class="nav-item" data-section="performance">
+                <span class="nav-icon">📊</span> Performance
+            </a>
+            <a href="#section-reports" class="nav-item" data-section="reports">
+                <span class="nav-icon">📄</span> Reports
+            </a>
+            <a href="#section-records" class="nav-item" data-section="records">
+                <span class="nav-icon">📚</span> Records
+            </a>
+            <a href="#section-comparison" class="nav-item" data-section="comparison">
+                <span class="nav-icon">⚖️</span> Comparison
+            </a>
+            <a href="#section-settings" class="nav-item" data-section="settings">
+                <span class="nav-icon">⚙️</span> Settings
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="{{ url_for('logout') }}" class="nav-item">
+                <span class="nav-icon">🚪</span> Logout
+            </a>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main" id="main">
+        <!-- TOP HEADER -->
+        <header class="top-header">
+            <h1 class="page-title">Student Performance Dashboard</h1>
+            <div class="header-user">
+                <span class="user-name">{{ user }}</span>
+                <div class="avatar">{{ user[0].upper() }}</div>
+            </div>
+        </header>
+
+        <!-- STUDENT ANALYSIS SECTION -->
+        <section id="section-student-analysis" class="section">
+            <div class="card form-card">
+                <h2 class="section-title">📋 Student Information</h2>
+                <form id="studentForm" autocomplete="off">
+                    <div class="info-grid">
+                    <div class="form-group">
+                        <label>Student Name <span class="star">*</span></label>
+                        <input type="text" id="name" placeholder="Enter full name">
+                    </div>
+                    <div class="form-group">
+                        <label>Roll No <span class="star">*</span></label>
+                        <input type="text" id="roll" placeholder="e.g. CSE001">
+                    </div>
+                    <div class="form-group">
+                        <label>Class / Course</label>
+                        <input type="text" id="course" placeholder="e.g. B.Tech CSE">
+                    </div>
+                    <div class="form-group">
+                        <label>Attendance (%)</label>
+                        <input type="number" id="attendance" placeholder="0 - 100" min="0" max="100">
+                    </div>
+                    </div>
+                    <div class="marks-grid">
+                    <div class="form-group">
+                        <label>Python <span class="star">*</span></label>
+                        <input type="number" id="python" placeholder="0 - 100" min="0" max="100">
+                    </div>
+                    <div class="form-group">
+                        <label>SQL <span class="star">*</span></label>
+                        <input type="number" id="sql" placeholder="0 - 100" min="0" max="100">
+                    </div>
+                    <div class="form-group">
+                        <label>Pandas <span class="star">*</span></label>
+                        <input type="number" id="pandas" placeholder="0 - 100" min="0" max="100">
+                    </div>
+                    </div>
+                </form>
+                <div class="actions">
+                    <button class="btn btn-primary" id="analyzeBtn">🔍 Analyze Performance</button>
+                    <button class="btn btn-outline" id="resetBtn">🗑️ Reset / Clear</button>
+                    <button class="btn btn-success" id="reportBtn">📄 Generate Report</button>
+                    <button class="btn btn-outline" id="saveBtn">💾 Save to Records</button>
+                </div>
+                <div class="form-error" id="formError"></div>
+            </div>
+        </section>
+
+        <!-- DASHBOARD SECTION (6 cards) -->
+        <section id="section-dashboard" class="section">
+            <h2 class="section-title">📈 Dashboard Overview</h2>
+            <div class="cards">
+                <div class="card stat-card">
+                    <div class="card-head"><span class="card-icon">📊</span> Average Marks</div>
+                    <div class="card-value" id="card-avg">—</div>
+                    <div class="card-sub">out of 100</div>
+                </div>
+                <div class="card stat-card">
+                    <div class="card-head"><span class="card-icon">🎯</span> Grade</div>
+                    <div class="card-value grade-badge" id="card-grade">—</div>
+                    <div class="card-sub">Overall Grade</div>
+                </div>
+                <div class="card stat-card">
+                    <div class="card-head"><span class="card-icon">⏰</span> Attendance</div>
+                    <div class="card-value" id="card-attendance">—</div>
+                    <div class="card-sub">Class attendance</div>
+                </div>
+                <div class="card stat-card">
+                    <div class="card-head"><span class="card-icon">🏆</span> Best Subject</div>
+                    <div class="card-value" id="card-best">—</div>
+                    <div class="card-sub">Strongest subject</div>
+                </div>
+                <div class="card stat-card">
+                    <div class="card-head"><span class="card-icon">⚠️</span> Weak Subject</div>
+                    <div class="card-value" id="card-weak">—</div>
+                    <div class="card-sub">Needs improvement</div>
+                </div>
+                <div class="card stat-card perf-indicator-card">
+                    <div class="card-head"><span class="card-icon">📈</span> Overall Performance</div>
+                    <div class="circular-wrap" id="perfCircleWrap">
+                        <div class="progress-circle" id="perfCircle">
+                            <div class="progress-value" id="perfValue">0%</div>
+                        </div>
+                    </div>
+                    <div class="card-sub" id="perfLabel">Overall performance</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PERFORMANCE SECTION: chart + comparison + profile + recommendation -->
+        <section id="section-performance" class="section">
+            <h2 class="section-title">📊 Subject Performance</h2>
+
+            <div class="grid-2">
+                <!-- Chart -->
+                <div class="card chart-card">
+                    <div class="card-head"><span class="card-icon">📊</span> Subject-wise Performance</div>
+                    <div class="chart-box">
+                        <img id="chartImg" class="chart-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                             alt="Subject performance chart" style="display:none;">
+                        <div class="chart-placeholder" id="chartPlaceholder">
+                            Enter marks and click Analyze Performance
+                        </div>
+                    </div>
+                    <div class="chart-legend">
+                        <span><b>Python</b><b style="color:#6366f1">■■</b></span>
+                        <span><b>SQL</b><b style="color:#22c58e">■■</b></span>
+                        <span><b>Pandas</b><b style="color:#3b82f6">■■</b></span>
+                    </div>
+                </div>
+
+                <!-- Subject Comparison -->
+                <div class="card">
+                    <div class="card-head"><span class="card-icon">⚖️</span> Subject Comparison</div>
+                    <div class="comparison" id="comparison">
+                        <div class="comp-row"><span>Python</span> <b id="c-python">—</b></div>
+                        <div class="comp-row"><span>SQL</span> <b id="c-sql">—</b></div>
+                        <div class="comp-row"><span>Pandas</span> <b id="c-pandas">—</b></div>
+                    </div>
+                    <div class="verdict">
+                        <span class="badge badge-best" id="badge-best">🏆 Best: —</span>
+                        <span class="badge badge-weak" id="badge-weak">⚠ Needs: —</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <!-- Student Profile -->
+                <div class="card">
+                    <div class="card-head"><span class="card-icon">👤</span> Student Profile</div>
+                    <div class="profile" id="profile">
+                        <div class="profile-row"><span>Name</span><b id="p-name">—</b></div>
+                        <div class="profile-row"><span>Roll No</span><b id="p-roll">—</b></div>
+                        <div class="profile-row"><span>Course</span><b id="p-course">—</b></div>
+                        <div class="profile-row"><span>Attendance</span><b id="p-attendance">—</b></div>
+                        <div class="profile-row"><span>Performance</span><b id="p-performance">—</b></div>
+                    </div>
+                </div>
+
+                <!-- Smart Recommendation -->
+                <div class="card">
+                    <div class="card-head"><span class="card-icon">💡</span> Smart Recommendation</div>
+                    <div class="recommendation" id="recommendation">
+                        <p class="rec-empty">No recommendations yet. Analyze a student's performance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REPORTS SECTION -->
+        <section id="section-reports" class="section">
+            <h2 class="section-title">📄 Performance Report</h2>
+            <div class="card">
+                <div class="report-view" id="reportView">
+                    <p class="report-placeholder">Generate a report by entering student details and clicking "Generate Report".</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- RECORDS SECTION -->
+        <section id="section-records" class="section">
+            <h2 class="section-title">📚 Student Records</h2>
+            <div class="card">
+                <div class="record-toolbar">
+                    <span class="record-count" id="recordCount">0 records</span>
+                </div>
+                <div class="table-wrap">
+                    <table class="records-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th><th>Name</th><th>Roll</th><th>Course</th>
+                                <th>Attendance</th><th>Avg</th><th>Grade</th><th>Best Subject</th><th>Weak Subject</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recordsBody">
+                            <tr><td colspan="9" class="empty">No records yet. Analyze a student and click "Save to Records".</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- STUDENT COMPARISON SECTION -->
+        <section id="section-comparison" class="section">
+            <h2 class="section-title">⚖️ Student Comparison</h2>
+            <div class="card">
+                <div class="compare-form">
+                    <select id="cmp1" class="select"></select>
+                    <select id="cmp2" class="select"></select>
+                    <button class="btn btn-primary" id="compareBtn">🔍 Compare</button>
+                </div>
+                <div class="compare-result" id="comparisonResult">
+                    <p class="empty">Select two students from the records and click Compare.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SETTINGS SECTION -->
+        <section id="section-settings" class="section">
+            <h2 class="section-title">⚙️ Settings</h2>
+            <div class="card">
+                <div class="setting-row">
+                    <div>
+                        <div class="setting-label">Dark Mode</div>
+                        <div class="setting-desc">Toggle between light and dark themes.</div>
+                    </div>
+                    <button class="theme-toggle" id="themeToggle">
+                        <span class="toggle-knob" id="themeKnob"></span>
+                    </button>
+                </div>
+                <hr>
+                <div class="setting-row">
+                    <div>
+                        <div class="setting-label">Reset Dashboard</div>
+                        <div class="setting-desc">Clear all entered data and results.</div>
+                    </div>
+                    <button class="btn btn-outline" id="settingResetBtn">Reset All</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

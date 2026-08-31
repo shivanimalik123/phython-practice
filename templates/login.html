@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Smart Student Performance Analysis System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="login-page">
+<div class="bg-elements">
+    <div class="circle c1"></div>
+    <div class="circle c2"></div>
+    <div class="circle c3"></div>
+</div>
+
+<div class="login-wrapper">
+    <div class="login-card" id="loginCard">
+        <div class="login-header">
+            <div class="logo">
+                <svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-6h4v6h6v-8h3z"/></svg>
+                <span></span>
+            </div>
+            <h1>Smart Student <span>Performance</span> Analysis System</h1>
+            <p>Sign in to access the dashboard</p>
+        </div>
+
+        <form id="loginForm" autocomplete="off">
+            <div class="form-group">
+                <label for="username">Username / Email</label>
+                <input type="text" id="username" name="username" placeholder="admin" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="input-toggle">
+                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                    <button type="button" class="toggle-pw" id="togglePw" aria-label="Toggle password">
+                        <span class="eye open">👁️</span>
+                        <span class="eye closed">🔒</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="form-row remember-row">
+                <label class="checkbox-container">
+                    <input type="checkbox" id="remember" name="remember">
+                    <span class="checkmark"></span>
+                    Remember Me
+                </label>
+                <a href="#" class="forgot">Forgot password?</a>
+            </div>
+
+            <div class="error-msg" id="loginError" style="display:none;"></div>
+
+            <button type="submit" class="btn btn-primary w-full">
+                <span class="btn-text">Login</span>
+                <span class="spinner" id="loginSpinner" style="display:none;"></span>
+            </button>
+        </form>
+
+        <div class="login-footer">
+            <small>Demo access: admin / admin123</small>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
