@@ -311,22 +311,24 @@
     /* ------ Student Comparison ------ */
     let cmpRecords = [];
     function loadComparison() {
+        const o1 = $("cmp1"); const o2 = $("cmp2");
+        if (!o1 || !o2) return;
         fetch("/api/records")
             .then(r => r.json())
             .then((d) => {
-                cmpRecords = d.records || [];
-                const o1 = $("cmp1"); const o2 = $("cmp2");
-                const opts = cmpRecords.map((r) => {
-                    const opt = document.createElement("option");
-                    opt.value = r.roll; opt.textContent = `${r.name} (${r.roll})`;
-                    return opt;
-                });
+                cmpRecords = (d && d.records) ? d.records : [];
+                const ph1 = new Option("-- Select student 1 --", "", true, true);
+                const ph2 = new Option("-- Select student 2 --", "", true, true);
                 o1.innerHTML = ""; o2.innerHTML = "";
-                o1.append(new Option("-- Select student 1 --", "", true));
-                o2.append(new Option("-- Select student 2 --", "", true));
-                opts.forEach((o) => { o1.add(o.cloneNode(true)); o2.add(o); });
+                o1.add(ph1); o2.add(ph2);
+                cmpRecords.forEach((r) => {
+                    const label = `${r.name} (${r.roll})`;
+                    o1.add(new Option(label, r.roll));
+                    o2.add(new Option(label, r.roll));
+                });
                 $("comparisonResult").innerHTML = '<p class="empty">Select two students from the records and click Compare.</p>';
-            });
+            })
+            .catch(() => { /* ignore - leave existing options */ });
     }
 
     function recByRoll(roll) { return cmpRecords.find((r) => String(r.roll) === String(roll)); }
